@@ -1,0 +1,125 @@
+/* Importing the font poppins and inter from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* importing tailwind css for my project */
+@import "tailwindcss";
+
+/* Enabling manual toggling of light and dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Creating my font families that I am goint to use in my project */
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  /* Custom Color Styles */
+
+  --color-primary: var(--color-purple-500);
+  --color-secondary: var(--color-indigo-500);
+  --color-secondary-hover: var(--color-indigo-700);
+}
+
+@layer base {
+  /* Creating vertical spacing the spacing for different levels eg(Sections, elements e.tc.) */
+
+  .space-y-l5 {
+    @apply space-y-12 md:space-y-14 lg:space-y-16;
+  }
+
+  .space-y-l4 {
+    @apply space-y-8 md:space-y-10 lg:space-y-12;
+  }
+
+  .space-y-l3 {
+    @apply space-y-4 md:space-y-5;
+  }
+
+  .space-y-l2 {
+    @apply space-y-2 md:space-y-3 lg:space-y-4;
+  }
+  .space-y-l1 {
+    @apply space-y-1 md:space-y-2 lg:space-y-2.5;
+  }
+
+  /* Creating horizontal spacing for sections and elements at different levels at different screens */
+
+  .space-x-l5 {
+    @apply space-x-12 md:space-x-14 lg:space-x-16;
+  }
+
+  .space-x-l4 {
+    @apply space-x-4 md:space-x-6 lg:space-x-8;
+  }
+
+  .space-x-l3 {
+    @apply space-x-4 md:space-x-5;
+  }
+
+  .space-x-l2 {
+    @apply space-x-2 md:space-x-3 lg:space-x-4;
+  }
+  .space-x-l1 {
+    @apply space-x-1 md:space-x-2 lg:space-x-2.5;
+  }
+
+  /* Creating the style of the brand logo */
+  .logo {
+    @apply text-lg md:text-xl lg:text-2xl font-bold font-poppins bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text;
+  }
+
+  /* Creating typography styles that scales across differnt screen sizes */
+
+  .heading-h1 {
+    @apply font-poppins text-4xl tracking-[-.01em] font-bold leading-11 md:text-5xl md:font-semibold md:leading-[3.75rem] lg:text-[4rem] lg:leading-[4.75rem] lg:tracking-[-.01em];
+  }
+
+  .heading-h2 {
+    @apply font-poppins text-[1.75rem] tracking-[-.005em] font-semibold leading-9 md:text-4xl md:font-medium md:leading-11 lg:text-5xl lg:leading-[3.75rem] lg:tracking-[-.005em];
+  }
+
+  .paragraph {
+    @apply font-inter text-base font-normal leading-normal lg:text-[1.125rem];
+  }
+
+  .caption {
+    @apply font-inter text-xs tracking-wide font-normal leading-normal md:text-sm;
+  }
+
+  /* Setting the paddings for the containers for different screeens */
+
+  .padding-x {
+    @apply px-4 md:px-8 lg:px-16;
+  }
+
+  /* Setting the text colors classes for different modes */
+  .secondary-text {
+    @apply text-gray-700 dark:text-gray-200;
+  }
+  .primary-text {
+    @apply text-gray-900 dark:text-gray-100;
+  }
+  /* Setting the background colors for different modes */
+  .bg-surface-lowest {
+    @apply bg-white dark:bg-gray-950;
+  }
+  .bg-surface-low {
+    @apply bg-gray-50 dark:bg-gray-900;
+  }
+  .bg-surface {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  .surface-surface-high {
+    @apply bg-gray-300 dark:bg-gray-700;
+  }
+
+  .bg-surface-highest {
+    @apply bg-gray-400 dark:bg-gray-600;
+  }
+
+  /* Setting the mode transitions from different modes */
+  .mode-transition {
+    @apply transition-colors duration-800 ease-in-out;
+  }
+}
