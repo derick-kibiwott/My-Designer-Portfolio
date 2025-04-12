@@ -5,7 +5,10 @@ import path from "path";
 
 // https://vite.dev/config
 export default defineConfig({
-  base: "/My-Designer-Portfolio/",
+  base: "/",
+  build: {
+    outDir: "dist", // or wherever your build output goes
+  },
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
